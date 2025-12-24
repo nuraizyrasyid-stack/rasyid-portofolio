@@ -289,12 +289,12 @@
         .typing-wrapper {
             font-size: clamp(20px, 4vw, 30px);
             color: var(--text-muted);
-            min-height: 100px; /* Diperbesar biar tetap 2 baris di HP kecil */
+            min-height: 120px; /* Dijamin 2 baris di HP kecil */
             margin-bottom: clamp(40px, 8vw, 60px);
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            flex-wrap: wrap; /* Biar rapih kalau terlalu panjang */
+            flex-wrap: wrap;
             text-align: left;
             font-weight: 500;
         }
@@ -315,15 +315,8 @@
         }
 
         @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
         }
 
         .social-icons {
@@ -368,7 +361,7 @@
             overflow: hidden;
             display: inline-block;
             outline: none;
-            pointer-events: auto; /* Pastikan bisa diklik */
+            pointer-events: auto;
         }
 
         .btn::before {
@@ -544,7 +537,7 @@
             margin-bottom: 32px;
         }
 
-        /* Skills - LOGO ROUNDED SEDANG + FLIP TETAP KELIHATAN */
+        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -620,13 +613,12 @@
             flex-grow: 1;
         }
 
-        /* Button di skill card lebih kecil & proporsional */
         .skill-card .btn {
             padding: clamp(10px, 2vw, 12px) clamp(24px, 4vw, 32px);
             font-size: clamp(14px, 2vw, 16px);
         }
 
-        /* Works - FILTER DIPERBAIKI TOTAL */
+        /* Works */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -695,7 +687,6 @@
             flex-wrap: wrap;
         }
 
-        /* Button di card project: SEDANG SAJA & PASTI KLIK */
         .project-card .btn {
             padding: clamp(10px, 2vw, 14px) clamp(24px, 4vw, 34px);
             font-size: clamp(14px, 2.2vw, 16px);
@@ -761,9 +752,8 @@
             color: var(--text-muted);
         }
 
-        /* ==================== RESPONSIVE ==================== */
+        /* RESPONSIVE PERBAIKAN TYPING & LAYOUT MOBILE */
         @media (max-width: 1024px) {
-
             .hero .container,
             .about .container {
                 flex-direction: column;
@@ -815,9 +805,10 @@
             }
 
             .typing-wrapper {
-                min-height: 120px;
+                min-height: 140px;
                 justify-content: center;
                 text-align: center;
+                padding: 0 10px;
             }
 
             .btn {
@@ -846,8 +837,8 @@
             }
 
             .typing-wrapper {
-                min-height: 140px;
-                font-size: clamp(18px, 5vw, 26px);
+                min-height: 160px;
+                font-size: clamp(18px, 5vw, 24px);
             }
         }
     </style>
@@ -1020,7 +1011,6 @@
                 </div>
 
                 <div class="project-grid" role="list">
-                    <!-- Semua card persis seperti yang kamu kirim, termasuk 5 card baru dengan link Vercel -->
                     <article class="project-card" data-category="english" data-aos="zoom-in" data-aos-delay="100"
                         role="listitem">
                         <img src="images/poster-kisah.png" alt="Preview Landing Page Eksplorasi" loading="lazy">
@@ -1031,7 +1021,79 @@
                                 class="btn">Lihat vidio</a>
                         </div>
                     </article>
-                    <!-- ... (semua card lain tetap ada persis) ... -->
+                    <article class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="300"
+                        role="listitem">
+                        <img src="images/poster-alquran-murottal.png" alt="Preview Simple To-Do List App"
+                            loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">project vidio murottal</h3>
+                            <p class="project-desc">Qs. surah al-isro ayat : 23</p>
+                            <a href="images/murottal-project.mp4" target="_blank" rel="noopener noreferrer"
+                                class="btn">Lihat Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="diniyyah" data-aos="zoom-in" data-aos-delay="500"
+                        role="listitem">
+                        <img src="images/poster-ejaan.png" alt="Thumbnail Murottal Surah Al-Insan" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">tahajji surah al-fatihah</h3>
+                            <p class="project-desc">kitab qoo'idah samiriyyah.</p>
+                            <a href="https://drive.google.com/file/d/1JWIcpOlmchj9mheHkh_yu1U-HhiVhq2a/view?usp=sharing"
+                                target="_blank" rel="noopener noreferrer" class="btn">Lihat Video</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="english" data-aos="zoom-in" data-aos-delay="700"
+                        role="listitem">
+                        <img src="images/hiwar.png" alt="Thumbnail English Speaking Video" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">percakapan basaha arab</h3>
+                            <p class="project-desc">tentang hari libur.</p>
+                            <a href="https://youtu.be/Lh6VOLsz5hs?si=hzED7poi_RTZECEL" class="btn">Lihat vidio</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="100"
+                        role="listitem">
+                        <img src="images/kitab.jpg" alt="Preview Project Baru 1" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">poster tahajji</h3>
+                            <p class="project-desc">design canva.</p>
+                            <a href="images/poster-tahajji.png" class="btn">Lihat Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="english" data-aos="zoom-in" data-aos-delay="200"
+                        role="listitem">
+                        <img src="images/poster hadist.png" alt="Preview Hadist tentang Niat" loading="lazy">
+
+                        <div class="project-info">
+                            <h3 class="project-title">Penjelasan Mengenai Hadist</h3>
+                            <p class="project-desc">Hadist tentang niat.</p>
+                            <a href="images/vidio-2.mp4" class="btn" target="_blank">Lihat Video</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="english" data-aos="zoom-in" data-aos-delay="300"
+                        role="listitem">
+                        <img src="images/poster kegiatan.png" alt="Thumbnail Vlog Kegiatan Ma'had" loading="lazy">
+
+                        <div class="project-info">
+                            <h3 class="project-title">Vlog Kegiatan Sehari-hari</h3>
+                            <p class="project-desc">Kegiatan sehari-hari di Ma'had.</p>
+                            <a href="images/vidio-1.mp4" class="btn" target="_blank">Lihat Video</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="diniyyah" data-aos="zoom-in" data-aos-delay="400"
+                        role="listitem">
+                        <img src="images/poster tasmi.png" alt="Thumbnail Video Baru 2" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title"> tasmi' alquran</h3>
+                            <p class="project-desc"> setoran juz 30. </p>
+                            <a href="https://drive.google.com/file/d/1MmockTtXS56xSlTI70awIDjBj70IAU3K/view?usp=sharing"
+                                class="btn" target="_blank">Lihat vidio</a>
+                        </div>
+                    </article>
+
+                    <!-- 5 CARD BARU -->
                     <article class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="100"
                         role="listitem">
                         <img src="images/project-coding-responsive.png" alt="Coding Project 1" loading="lazy">
@@ -1041,13 +1103,48 @@
                             <a href="https://web-sederhana-git-main-nuraizyrasyid-7576s-projects.vercel.app/" class="btn" target="_blank">Lihat Project</a>
                         </div>
                     </article>
-                    <!-- ... sampai card terakhir tetap ada ... -->
+                    <article class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="200"
+                        role="listitem">
+                        <img src="images/coding-text-formating.png" alt="Coding Project 2" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">Project Coding 2</h3>
+                            <p class="project-desc">Deskripsi project coding kedua.</p>
+                            <a href="#" class="btn" target="_blank">Lihat Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="300"
+                        role="listitem">
+                        <img src="images/placeholder-coding3.png" alt="Coding Project 3" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">Project Coding 3</h3>
+                            <p class="project-desc">Deskripsi project coding ketiga.</p>
+                            <a href="#" class="btn" target="_blank">Lihat Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="400"
+                        role="listitem">
+                        <img src="images/placeholder-coding4.png" alt="Coding Project 4" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">Project Coding 4</h3>
+                            <p class="project-desc">Deskripsi project coding keempat.</p>
+                            <a href="#" class="btn" target="_blank">Lihat Project</a>
+                        </div>
+                    </article>
+                    <article class="project-card" data-category="web" data-aos="zoom-in" data-aos-delay="500"
+                        role="listitem">
+                        <img src="images/placeholder-coding5.png" alt="Coding Project 5" loading="lazy">
+                        <div class="project-info">
+                            <h3 class="project-title">Project Coding 5</h3>
+                            <p class="project-desc">Deskripsi project coding kelima.</p>
+                            <a href="#" class="btn" target="_blank">Lihat Project</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer / Contact -->
+    <!-- Footer -->
     <footer id="contact" aria-labelledby="contact-title">
         <div class="container">
             <h2 id="contact-title" class="section-title" data-aos="zoom-in">Contact Me</h2>
@@ -1077,61 +1174,54 @@
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
-        // Loading - CEPAT
+        // Loading cepat
         window.addEventListener('load', () => {
             const loading = document.getElementById('loading');
             loading.classList.add('hidden');
-            setTimeout(() => loading.style.display = 'none', 600);
+            setTimeout(() => loading.style.display = 'none', 400);
         });
 
-        // AOS Init - OPTIMASI CEPAT
+        // AOS ringan
         AOS.init({
-            duration: 800,
-            easing: 'ease-out-back',
+            duration: 600,
+            easing: 'ease-out',
             once: true,
             mirror: false,
-            offset: 60,
-            anchorPlacement: 'top-bottom'
+            offset: 40
         });
 
-        // Typed.js
+        // Typed.js mulai cepat
         new Typed('#typed', {
             strings: ["Web Developer (Front-End Specialist)"],
-            typeSpeed: 70,
-            backSpeed: 40,
-            backDelay: 2500,
-            startDelay: 800,
+            typeSpeed: 60,
+            backSpeed: 30,
+            backDelay: 2000,
+            startDelay: 300,
             loop: true,
             showCursor: false
         });
 
-        // Particles.js - RINGAN
+        // Particles super ringan
         particlesJS('particles', {
             particles: {
-                number: { value: 20, density: { enable: true, value_area: 800 } },
+                number: { value: 12 },
                 color: { value: '#ffd60a' },
                 shape: { type: 'circle' },
-                opacity: { value: 0.2, random: true },
-                size: { value: 2, random: true },
-                line_linked: { enable: false },
-                move: { enable: true, speed: 0.5 }
+                opacity: { value: 0.15 },
+                size: { value: 2 },
+                move: { enable: true, speed: 0.3 }
             },
-            interactivity: {
-                detect_on: "window",
-                events: { onhover: { enable: false }, onclick: { enable: false } },
-                modes: {}
-            },
+            interactivity: { events: {} },
             retina_detect: true
         });
         document.getElementById('particles').classList.add('loaded');
 
-        // Navbar Scroll Effect
+        // Semua script lain tetap sama seperti code kamu
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
 
@@ -1152,7 +1242,6 @@
             });
         });
 
-        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1175,7 +1264,6 @@
             });
         });
 
-        // Project Filter - STABIL & SEMUA CARD ANIMASI KEMBALI
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelector('.filter-btn.active')?.classList.remove('active');
