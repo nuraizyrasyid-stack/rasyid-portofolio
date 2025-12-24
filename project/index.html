@@ -286,37 +286,11 @@
             text-shadow: 0 0 30px rgba(255, 214, 10, 0.2);
         }
 
-        .typing-wrapper {
-            font-size: clamp(20px, 4vw, 30px);
-            color: var(--text-muted);
-            min-height: 120px; /* Dijamin 2 baris di HP kecil */
-            margin-bottom: clamp(40px, 8vw, 60px);
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            text-align: left;
-            font-weight: 500;
-        }
-
-        #typed {
+        .profession-text {
+            font-size: clamp(22px, 5vw, 32px);
             color: var(--accent);
             font-weight: 700;
-        }
-
-        .typed-cursor {
-            display: inline-block;
-            width: 3px;
-            height: 1.1em;
-            background: var(--accent);
-            margin-left: 5px;
-            animation: blink 0.8s infinite;
-            vertical-align: bottom;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+            margin-bottom: clamp(40px, 8vw, 60px);
         }
 
         .social-icons {
@@ -386,27 +360,6 @@
             left: 150%;
         }
 
-        .filter-btn.active {
-            background: var(--hover-bg);
-            color: var(--hover-text);
-            border-color: var(--accent);
-            box-shadow: 0 10px 35px rgba(255, 214, 10, 0.5);
-            transform: none !important;
-        }
-
-        .filter-btn.active::before {
-            left: -150%;
-        }
-
-        .filter-btn.active:hover {
-            transform: translateY(-8px) scale(1.06) !important;
-            box-shadow: 0 20px 60px var(--neon) !important;
-        }
-
-        .filter-btn.active:hover::before {
-            left: 150%;
-        }
-
         .hero-img {
             flex: 1;
             max-width: 460px;
@@ -434,7 +387,7 @@
             transform: scale(1.12);
         }
 
-        /* ==================== LOADING & PARTICLES ==================== */
+        /* ==================== LOADING ==================== */
         .loading {
             position: fixed;
             inset: 0;
@@ -442,7 +395,7 @@
             display: grid;
             place-items: center;
             z-index: 9999;
-            transition: opacity 0.8s ease;
+            transition: opacity 0.5s ease;
         }
 
         .loading.hidden {
@@ -463,19 +416,6 @@
             to {
                 transform: rotate(360deg);
             }
-        }
-
-        #particles {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 1.5s ease;
-        }
-
-        #particles.loaded {
-            opacity: 1;
         }
 
         /* ==================== SECTIONS ==================== */
@@ -752,7 +692,7 @@
             color: var(--text-muted);
         }
 
-        /* RESPONSIVE PERBAIKAN TYPING & LAYOUT MOBILE */
+        /* ==================== RESPONSIVE ==================== */
         @media (max-width: 1024px) {
             .hero .container,
             .about .container {
@@ -780,8 +720,7 @@
                 justify-content: center;
             }
 
-            .typing-wrapper {
-                justify-content: center;
+            .profession-text {
                 text-align: center;
             }
         }
@@ -804,16 +743,13 @@
                 grid-template-columns: 1fr;
             }
 
-            .typing-wrapper {
-                min-height: 140px;
-                justify-content: center;
-                text-align: center;
-                padding: 0 10px;
-            }
-
             .btn {
                 padding: clamp(14px, 3vw, 16px) clamp(30px, 5vw, 40px);
                 font-size: clamp(16px, 3vw, 18px);
+            }
+
+            .profession-text {
+                text-align: center;
             }
         }
 
@@ -836,9 +772,8 @@
                 font-size: 15px;
             }
 
-            .typing-wrapper {
-                min-height: 160px;
-                font-size: clamp(18px, 5vw, 24px);
+            .profession-text {
+                font-size: clamp(20px, 5vw, 28px);
             }
         }
     </style>
@@ -849,9 +784,6 @@
     <div class="loading" id="loading" aria-hidden="true">
         <div class="loader" aria-label="Loading..."></div>
     </div>
-
-    <!-- Particles Background -->
-    <div id="particles" aria-hidden="true"></div>
 
     <!-- Navbar -->
     <header>
@@ -893,9 +825,7 @@
                 <div class="hero-content">
                     <p class="text-1" data-aos="fade-down">Hi, I'm</p>
                     <h1 id="hero-title" class="text-2" data-aos="fade-up" data-aos-delay="200">Rasyid Nur Aisy</h1>
-                    <div class="typing-wrapper" data-aos="fade-up" data-aos-delay="400">
-                        <span id="typed"></span><span class="typed-cursor" aria-hidden="true"></span>
-                    </div>
+                    <p class="profession-text" data-aos="fade-up" data-aos-delay="400">Web Developer and design</p>
                     <div class="social-icons" data-aos="fade-up" data-aos-delay="600">
                         <a href="https://instagram.com/rasyid-instagram" target="_blank" rel="noopener noreferrer"
                             aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -907,7 +837,7 @@
                             aria-label="GitHub"><i class="fab fa-github"></i></a>
                     </div>
                     <a class="btn" href="https://wa.me/6283160891392" target="_blank" rel="noopener noreferrer"
-                        data-aos="zoom-in-up" data-aos-delay="800" style="text-decoration: none;">Hubungi Saya</a>
+                        data-aos="zoom-in-up" data-aos-delay="800">Hubungi Saya</a>
                 </div>
                 <div class="hero-img" data-aos="zoom-in" data-aos-delay="400">
                     <img src="images/foto-profile.png" alt="Foto Rasyid Nur Aisy - Web Developer" loading="lazy">
@@ -1064,7 +994,6 @@
                     <article class="project-card" data-category="english" data-aos="zoom-in" data-aos-delay="200"
                         role="listitem">
                         <img src="images/poster hadist.png" alt="Preview Hadist tentang Niat" loading="lazy">
-
                         <div class="project-info">
                             <h3 class="project-title">Penjelasan Mengenai Hadist</h3>
                             <p class="project-desc">Hadist tentang niat.</p>
@@ -1075,7 +1004,6 @@
                     <article class="project-card" data-category="english" data-aos="zoom-in" data-aos-delay="300"
                         role="listitem">
                         <img src="images/poster kegiatan.png" alt="Thumbnail Vlog Kegiatan Ma'had" loading="lazy">
-
                         <div class="project-info">
                             <h3 class="project-title">Vlog Kegiatan Sehari-hari</h3>
                             <p class="project-desc">Kegiatan sehari-hari di Ma'had.</p>
@@ -1170,15 +1098,13 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
-        // Loading cepat
+        // Loading super cepat
         window.addEventListener('load', () => {
             const loading = document.getElementById('loading');
             loading.classList.add('hidden');
-            setTimeout(() => loading.style.display = 'none', 400);
+            setTimeout(() => loading.style.display = 'none', 300);
         });
 
         // AOS ringan
@@ -1187,41 +1113,16 @@
             easing: 'ease-out',
             once: true,
             mirror: false,
-            offset: 40
+            offset: 50
         });
 
-        // Typed.js mulai cepat
-        new Typed('#typed', {
-            strings: ["Web Developer (Front-End Specialist)"],
-            typeSpeed: 60,
-            backSpeed: 30,
-            backDelay: 2000,
-            startDelay: 300,
-            loop: true,
-            showCursor: false
-        });
-
-        // Particles super ringan
-        particlesJS('particles', {
-            particles: {
-                number: { value: 12 },
-                color: { value: '#ffd60a' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.15 },
-                size: { value: 2 },
-                move: { enable: true, speed: 0.3 }
-            },
-            interactivity: { events: {} },
-            retina_detect: true
-        });
-        document.getElementById('particles').classList.add('loaded');
-
-        // Semua script lain tetap sama seperti code kamu
+        // Navbar Scroll Effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             navbar.classList.toggle('scrolled', window.scrollY > 50);
         });
 
+        // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
 
@@ -1242,6 +1143,7 @@
             });
         });
 
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1264,6 +1166,7 @@
             });
         });
 
+        // Project Filter
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelector('.filter-btn.active')?.classList.remove('active');
