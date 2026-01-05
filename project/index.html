@@ -11,24 +11,20 @@
     <meta property="og:title" content="Rasyid Nur Aisy | Front-End Developer Portfolio">
     <meta property="og:description" content="Portfolio Rasyid Nur Aisy - Web Developer muda dari Banjarnegara, spesialis Front-End dengan project keren.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rasyid.dev"> <!-- Ganti dengan domain kamu nanti -->
+    <meta property="og:url" content="https://rasyid.dev">
     <meta property="og:image" content="images/foto-profile.png">
 
-    <!-- Preload Critical Resources -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://unpkg.com/aos@next/dist/aos.css" as="style"
-        onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Preconnect untuk optimasi loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Stylesheets dengan async loading -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -205,7 +201,7 @@
                         <div class="project-info">
                             <h3 class="project-title">kisah ke 2 orangtua</h3>
                             <p class="project-desc">perjalanan hidup kedua orangtua saya.</p>
-                            <a href="images/kisah kedua orangtua.mp4" target="_blank" rel="noopener noreferrer"
+                            <a href="https://youtu.be/6nuaaJG5mPw" target="_blank" rel="noopener noreferrer"
                                 class="btn">Lihat vidio</a>
                         </div>
                     </article>
@@ -216,7 +212,7 @@
                         <div class="project-info">
                             <h3 class="project-title">project vidio murottal</h3>
                             <p class="project-desc">Qs. surah al-isro ayat : 23</p>
-                            <a href="images/murottal-project.mp4" target="_blank" rel="noopener noreferrer"
+                            <a href="https://youtube.com/shorts/T3mJyh71nRg?feature=share" target="_blank" rel="noopener noreferrer"
                                 class="btn">Lihat Project</a>
                         </div>
                     </article>
@@ -354,11 +350,11 @@
         </div>
     </footer>
  
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="js/script.js"></script>
+    <!-- Scripts - Defer untuk loading optimal -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </body>
 
 </html>
